@@ -20,6 +20,7 @@ class CreateData < ActiveRecord::Migration
       t.float :l3
       t.string :racePlace
       t.string :condition
+      t.string :course
       t.integer :length
       t.datetime :date
 

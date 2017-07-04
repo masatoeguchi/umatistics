@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170619081002) do
     t.float    "l3",         limit: 24
     t.string   "racePlace",  limit: 255
     t.string   "condition",  limit: 255
+    t.string   "course",     limit: 255
     t.integer  "length",     limit: 4
     t.datetime "date"
     t.datetime "created_at",             null: false

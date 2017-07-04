@@ -2,7 +2,7 @@ class UmatisticsScraping
   def self.product_urls
     agent = Mechanize.new
     links = []
-    next_url = "l20170618"
+    next_url = "l20000105"
     # スタート時のリンク
     # 自動取得したい
 
@@ -37,7 +37,9 @@ class UmatisticsScraping
     title = page.search('title').inner_text
     date = make_date(title)
     racePlace = page.at('.r-navi div').inner_text
-    conditionLength = page.search('.summary li:nth-of-type(2)').inner_text
+    courseLength = page.search('.summary li:nth-of-type(2)').inner_text
+    originalCondition = page.search('.summary li:nth-of-type(5)').inner_text
+    condition = make_condition(originalCondition)
     # ページ全体から一度のみ取得する情報を抜き出す
 
     page = page.at('tbody')
@@ -57,7 +59,7 @@ class UmatisticsScraping
     w_diff = page.search('.w-diff').map{ |n| n.inner_text } if page.search('.w-diff')
     pass3 = page.search('.pass3').map{ |n| n.inner_text } if page.search('.pass3')
     pass4 = page.search('.pass4').map{ |n| n.inner_text } if page.search('.pass4')
-    l3 = page.search('.l3').map{ |n| n.inner_text } if page.search('.l3 a')
+    l3 = page.search('.l3 a').map{ |n| n.inner_text } if page.search('.l3 a')
     # tbodyより、繰り返し情報の抜き出し
 
     names.each_with_index do |name,i|
@@ -81,9 +83,10 @@ class UmatisticsScraping
         product.pass4 = pass4[i]
         product.l3 = l3[i]
         product.racePlace = racePlace[0..1]
-        product.condition = conditionLength[0]
-        product.length = conditionLength[1..4]
+        product.course = courseLength[0]
+        product.length = courseLength[1..4]
         product.date = date
+        product.condition = condition
 
         product.save
       else
@@ -96,6 +99,10 @@ class UmatisticsScraping
   def self.make_date(title)
     result = /[12][0-9][0-9][0-9]年1?[0-9]月[123]?[0-9]日/.match(title).to_s
     Date.strptime(result,'%Y年%m月%d日')
+  end
+
+  def self.make_condition(condition)
+    result = /["稍"]?["良","重","不"]/.match(condition)
   end
 
   def self.make_sex(sexage)
