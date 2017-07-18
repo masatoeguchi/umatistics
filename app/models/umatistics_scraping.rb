@@ -2,9 +2,15 @@ class UmatisticsScraping
   def self.product_urls
     agent = Mechanize.new
     links = []
-    next_url = "l20000105"
+    next_url = "l20010225"
     # スタート時のリンク
     # 自動取得したい
+
+      # !To improve!
+    # 新馬戦に限りw_diffをNULLに
+    # レース番号を取得
+    # 第何週か、芝の荒れ具合
+    # 障害物競争、除外、芝で入力
 
     while true
       url = "http://klan.jp/" + next_url
@@ -59,7 +65,7 @@ class UmatisticsScraping
     w_diff = page.search('.w-diff').map{ |n| n.inner_text } if page.search('.w-diff')
     pass3 = page.search('.pass3').map{ |n| n.inner_text } if page.search('.pass3')
     pass4 = page.search('.pass4').map{ |n| n.inner_text } if page.search('.pass4')
-    l3 = page.search('.l3 a').map{ |n| n.inner_text } if page.search('.l3 a')
+    l3 = page.search('.l3').map{ |n| n.inner_text } if page.search('.l3')
     # tbodyより、繰り返し情報の抜き出し
 
     names.each_with_index do |name,i|
