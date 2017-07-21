@@ -10,7 +10,8 @@ class UmatisticsScraping
     # 新馬戦に限りw_diffをNULLに
     # レース番号を取得
     # 第何週か、芝の荒れ具合
-    # 障害物競争、除外、芝で入力
+    # 障害物競争、除外、現在芝で入力
+    # クラスの指定
 
     while true
       url = "http://klan.jp/" + next_url

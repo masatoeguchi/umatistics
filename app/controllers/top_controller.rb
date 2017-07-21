@@ -1,5 +1,6 @@
 class TopController < ApplicationController
 
+    @@uma_same_condition =[]
 
 
   def index
@@ -100,6 +101,16 @@ class TopController < ApplicationController
     @uma_name18 = @uma18[0][:name]
 
 
-  end
+     # @uma_same_condition << @uma1.select{ |uma| uma[:length] == params[:length]}
 
+    @uma1.each do |uma|
+      if uma[:length] == params[:length].to_i &&
+         uma[:racePlace] == params[:racePlace] &&
+         uma[:condition] == params[:condition]
+
+      then  @@uma_same_condition << uma
+
+      end
+    end
+  end
 end
