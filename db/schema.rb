@@ -11,33 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619081002) do
+ActiveRecord::Schema.define(version: 20170726051956) do
 
   create_table "race_data", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.integer  "order",      limit: 4
-    t.integer  "wakuban",    limit: 4
-    t.integer  "umaban",     limit: 4
-    t.float    "odds",       limit: 24
-    t.integer  "popular",    limit: 4
-    t.string   "sex",        limit: 255
-    t.integer  "age",        limit: 4
-    t.integer  "burden",     limit: 4
-    t.string   "jockey",     limit: 255
-    t.float    "time",       limit: 24
-    t.string   "trainer",    limit: 255
-    t.integer  "weight",     limit: 4
-    t.integer  "w_diff",     limit: 4
-    t.integer  "pass3",      limit: 4
-    t.integer  "pass4",      limit: 4
-    t.float    "l3",         limit: 24
-    t.string   "racePlace",  limit: 255
-    t.string   "condition",  limit: 255
-    t.string   "course",     limit: 255
-    t.integer  "length",     limit: 4
+    t.string   "name",            limit: 255
+    t.integer  "order",           limit: 4
+    t.integer  "wakuban",         limit: 4
+    t.integer  "umaban",          limit: 4
+    t.float    "odds",            limit: 24
+    t.integer  "popular",         limit: 4
+    t.string   "sex",             limit: 255
+    t.integer  "age",             limit: 4
+    t.integer  "burden",          limit: 4
+    t.string   "jockey",          limit: 255
+    t.float    "time",            limit: 24
+    t.string   "trainer",         limit: 255
+    t.integer  "weight",          limit: 4
+    t.integer  "w_diff",          limit: 4
+    t.integer  "pass3",           limit: 4
+    t.integer  "pass4",           limit: 4
+    t.float    "l3",              limit: 24
+    t.string   "racePlace",       limit: 255
+    t.string   "condition",       limit: 255
+    t.string   "course",          limit: 255
+    t.integer  "length",          limit: 4
     t.datetime "date"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "week_id",         limit: 8
+    t.text     "age_condition",   limit: 65535
+    t.text     "class_condition", limit: 65535
+    t.string   "raceNumber",      limit: 255
+    t.integer  "race_kai",        limit: 1
+    t.integer  "race_week",       limit: 1
+    t.string   "handi_cap",       limit: 255
   end
 
 end
