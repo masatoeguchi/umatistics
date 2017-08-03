@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726051956) do
+ActiveRecord::Schema.define(version: 20170731075328) do
 
   create_table "race_data", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -45,6 +45,46 @@ ActiveRecord::Schema.define(version: 20170726051956) do
     t.integer  "race_kai",        limit: 1
     t.integer  "race_week",       limit: 1
     t.string   "handi_cap",       limit: 255
+  end
+
+  create_table "returns", force: :cascade do |t|
+    t.integer  "tansyo_num",        limit: 2
+    t.integer  "tansyo_return",     limit: 4
+    t.integer  "fukusyo_num1",      limit: 2
+    t.integer  "fukusyo_num2",      limit: 2
+    t.integer  "fukusyo_num3",      limit: 2
+    t.integer  "fukusyo_return1",   limit: 4
+    t.integer  "fukusyo_return2",   limit: 4
+    t.integer  "fukusyo_return3",   limit: 4
+    t.integer  "wide_num1_1",       limit: 2
+    t.integer  "wide_num1_2",       limit: 2
+    t.integer  "wide_num2_1",       limit: 2
+    t.integer  "wide_num2_2",       limit: 2
+    t.integer  "wide_num3_1",       limit: 2
+    t.integer  "wide_num3_2",       limit: 2
+    t.integer  "wide_return1",      limit: 4
+    t.integer  "wide_return2",      limit: 4
+    t.integer  "wide_return3",      limit: 4
+    t.integer  "wakuren_num1",      limit: 2
+    t.integer  "wakuren_num2",      limit: 2
+    t.integer  "wakuren_return",    limit: 4
+    t.integer  "umaren_num1",       limit: 2
+    t.integer  "umaren_num2",       limit: 2
+    t.integer  "umaren_return",     limit: 4
+    t.integer  "umatan_num1",       limit: 2
+    t.integer  "umatan_num2",       limit: 2
+    t.integer  "umatan_return",     limit: 4
+    t.integer  "sanrenpuku_num1",   limit: 2
+    t.integer  "sanrenpuku_num2",   limit: 2
+    t.integer  "sanrenpuku_num3",   limit: 2
+    t.integer  "sanrenpuku_return", limit: 4
+    t.integer  "sanrentan_num1",    limit: 2
+    t.integer  "sanrentan_num2",    limit: 2
+    t.integer  "sanrentan_num3",    limit: 2
+    t.integer  "sanrentan_return",  limit: 4
+    t.integer  "week_id",           limit: 8
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end

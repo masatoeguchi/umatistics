@@ -2,7 +2,7 @@ class UmatisticsScraping
   def self.product_urls
     agent = Mechanize.new
     links = []
-    next_url = "l20170702"
+    next_url = "l20130323"
     # スタート時のリンク
     # 自動取得したい
 
