@@ -2,11 +2,15 @@ Rails.application.routes.draw do
 
   root :to => 'top#index'
 
-  resources :top, only: :index do
+  resources :search
+  resources :analysis
+
+  resources :top do
     collection do
-      get 'search'
+      get :search
+      get :analysis
     end
-  end
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

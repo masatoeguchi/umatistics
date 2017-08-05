@@ -1,232 +1,125 @@
 
 <body>
 
-<div class="condition-wrapper">
-  <div class="racePlace">
-  </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>検索</th>
+    </tr>
+  </thead>
 
-  <div class="length">
-  </div>
+  <tbody>
+    <tr>
+      <th scope="row">
+       <%= form_tag('/search/search', method: :get) do %>
+        レース場 <input class="search__query" name="racePlace" placeholder="" type="text" value="">
+        距離 <input class="search__query" name="length" placeholder="" type="text" value="">
+        コース <input class="search__query" name="course" placeholder="" type="text" value="">
+        馬場 <input class="search__query" name="condition" placeholder="" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+       1 <input class="search__query" name="keyword1" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        2 <input class="search__query" name="keyword2" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        3 <input class="search__query" name="keyword3" placeholder="検索" type="text" value="">
+      </th>
 
-  <div class="course">
-  </div>
-
-  <div class="condtion">
-  </div>
-</div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>name</th>
-        <th>同条件タイム直近</th>
-        <th>同条件タイム平均</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">
-        <%= @uma_name1 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-         <%= @uma_name2 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name3 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-         <%= @uma_name4 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-         <%= @uma_name5 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-         <%= @uma_name6 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-          <%= @uma_name7 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name8 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name9 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name10 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name11 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name12 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name13 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name14 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name15 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name16 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name17 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">
-        <%= @uma_name18 %>
-        </th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+    </tr>
+    <tr>
+      <th scope="row">
+        4 <input class="search__query" name="keyword4" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+       5 <input class="search__query" name="keyword5" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        6 <input class="search__query" name="keyword6" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        7 <input class="search__query" name="keyword7" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        8 <input class="search__query" name="keyword8" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        9 <input class="search__query" name="keyword9" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        10<input class="search__query" name="keyword10" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        11<input class="search__query" name="keyword11" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        12<input class="search__query" name="keyword12" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        13<input class="search__query" name="keyword13" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        14<input class="search__query" name="keyword14" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        15<input class="search__query" name="keyword15" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        16<input class="search__query" name="keyword16" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        17<input class="search__query" name="keyword17" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+      18<input class="search__query" name="keyword18" placeholder="検索" type="text" value="">
+      </th>
+    </tr>
+    <tr>
+      <th scope="row">
+        <button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
+        <% end %>
+      </th>
+    </tr>
 
 
-  </body>
+
+  </tbody>
+</table>
+
+
+</body>

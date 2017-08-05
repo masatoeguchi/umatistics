@@ -1,8 +1,11 @@
 class UmatisticsScraping
   def self.product_urls
-    agent = Mechanize.new
+    agent = Mechanize.new do |a|
+      a.follow_meta_refresh = true
+      a.keep_alive =false
+    end
     links = []
-    next_url = "l20130323"
+    next_url = "l20090516"
     # スタート時のリンク
     # 自動取得したい
 

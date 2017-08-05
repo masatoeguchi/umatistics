@@ -1,9 +1,6 @@
-
 <body>
 
-
-何書こうかな
-<!-- <div class="condition-wrapper">
+<div class="condition-wrapper">
   <div class="racePlace">
   </div>
 
@@ -16,12 +13,20 @@
   <div class="condtion">
   </div>
 </div>
+ <%= form_tag('/analysis/show', method: :get) do %>
+        レース場 <input class="search__query" name="racePlace" placeholder="" type="text" value="">
+        距離 <input class="search__query" name="length" placeholder="" type="text" value="">
+        コース <input class="search__query" name="course" placeholder="" type="text" value="">
+        馬場 <input class="search__query" name="condition" placeholder="" type="text" value="">
+        <button class="btn-search" title="検索" type="submit"> search <i class="icon-search"></i></button></input>
+  <% end %>
+
   <table class="table">
     <thead>
       <tr>
-        <th>name</th>
-        <th>同条件タイム直近</th>
-        <th>同条件タイム平均</th>
+        <th>条件</th>
+        <th>平均タイム</th>
+        <th>同クラス平均タイム</th>
         <th>2</th>
         <th>3</th>
         <th>4</th>
@@ -228,7 +233,7 @@
         <td></td>
       </tr>
     </tbody>
-  </table> -->
+  </table>
 
 
   </body>

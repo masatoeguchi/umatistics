@@ -2,7 +2,7 @@ class UmatisticsScraping2
   def self.product_urls
     agent = Mechanize.new
     links = []
-    next_url = "l20100417"
+    next_url = "l20090516"
     # スタート時のリンク
     # 自動取得したい
 
@@ -15,13 +15,13 @@ class UmatisticsScraping2
         # １ページ目のリンク格納
       end
 
-      if current_page.at('.prev a')
-        next_link = current_page.at('.prev a')
-        next_url = next_link.get_attribute('href')
-      else
-        break
-      end
-      次のページへのリンクが存在すれば取得
+      # if current_page.at('.prev a')
+      #   next_link = current_page.at('.prev a')
+      #   next_url = next_link.get_attribute('href')
+      # else
+      #   break
+      # end
+      # 次のページへのリンクが存在すれば取得
     end
 
     links.each do |link|

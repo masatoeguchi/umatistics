@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731075328) do
+ActiveRecord::Schema.define(version: 20170805155331) do
 
   create_table "race_data", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170731075328) do
     t.integer  "pass4",           limit: 4
     t.float    "l3",              limit: 24
     t.string   "racePlace",       limit: 255
-    t.string   "condition",       limit: 255
+    t.string   "baba_condition",  limit: 255
     t.string   "course",          limit: 255
     t.integer  "length",          limit: 4
     t.datetime "date"
