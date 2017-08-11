@@ -1,30 +1,63 @@
 <body>
 
-<div class="condition-wrapper">
-  <div class="racePlace">
-  </div>
 
-  <div class="length">
-  </div>
 
-  <div class="course">
-  </div>
-
-  <div class="condtion">
-  </div>
-</div>
- <%= form_tag('/analysis/show', method: :get) do %>
-        レース場 <input class="search__query" name="racePlace" placeholder="" type="text" value="">
-        距離 <input class="search__query" name="length" placeholder="" type="text" value="">
-        コース <input class="search__query" name="course" placeholder="" type="text" value="">
-        馬場 <input class="search__query" name="condition" placeholder="" type="text" value="">
-        <button class="btn-search" title="検索" type="submit"> search <i class="icon-search"></i></button></input>
+  <div crass="condition-wrapper">
+    <style>
+      .condition-wrapper div select {
+      float:left;
+      margin-left:50px;
+      }
+</style>
+   <%= form_tag('/analysis/show', method: :get) do %>
+   レース場<select class="racePlace" id="page_name" name="racePlace">
+   <option value=""></option>
+   <option value="札幌">札幌</option>
+   <option value="函館">函館</option>
+   <option value="福島">福島</option>
+   <option value="新潟">新潟</option>
+   <option value="東京">東京</option>
+   <option value="中山">中山</option>
+   <option value="中京">中京</option>
+   <option value="京都">京都</option>
+   <option value="阪神">阪神</option>
+   <option value="小倉">小倉</option>
+  </select>
+  距離<select class="length" id="page_name" name="length">
+  <option value=""></option>
+  <option value="1000">1000</option>
+  <option value="1200">1200</option>
+  <option value="1300">1300</option>
+  <option value="1400">1400</option>
+  <option value="1600">1600</option>
+  <option value="1800">1800</option>
+  <option value="2000">2000</option>
+  <option value="2200">2200</option>
+  <option value="2400">2400</option>
+  <option value="3000">3000</option>
+  </select>
+  コース<select class="course" id="page_name" name="course">
+  <option value=""></option>
+  <option value="芝">芝</option>
+  <option value="ダ">ダート</option>
+  <option value="障害">障害</option>
+  </select>
+  馬場<select class="baba_condition" id="page_name" name="baba_condition">
+  <option value=""></option>
+  <option value="良">良</option>
+  <option value="稍重">稍重</option>
+  <option value="重">重</option>
+  <option value="不">不</option>
+  </select>
+  <button class="btn-search" title="検索" type="submit"> search <i class="icon-search"></i></button></input>
   <% end %>
+  <div>
+
 
   <table class="table">
     <thead>
       <tr>
-        <th>条件</th>
+        <th>サンプル数</th>
         <th>平均タイム</th>
         <th>同クラス平均タイム</th>
         <th>2</th>
@@ -36,7 +69,7 @@
     <tbody>
       <tr>
         <th scope="row">
-        <%= @uma_name1 %>
+        <%= %>
         </th>
         <td></td>
         <td></td>

@@ -1,6 +1,5 @@
 class TopController < ApplicationController
 
-    @uma_same_condition =[]
 
 
   def index

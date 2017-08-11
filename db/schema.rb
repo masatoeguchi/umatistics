@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805155331) do
+ActiveRecord::Schema.define(version: 20170811165107) do
 
   create_table "race_data", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -85,6 +85,15 @@ ActiveRecord::Schema.define(version: 20170805155331) do
     t.integer  "week_id",           limit: 8
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "winning_rates", force: :cascade do |t|
+    t.integer  "name",       limit: 4
+    t.float    "win_ratio",  limit: 24
+    t.float    "top2_ratio", limit: 24
+    t.float    "top3_ratio", limit: 24
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
 end
