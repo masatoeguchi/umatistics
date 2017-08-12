@@ -88,12 +88,12 @@ ActiveRecord::Schema.define(version: 20170811165107) do
   end
 
   create_table "winning_rates", force: :cascade do |t|
-    t.integer  "name",       limit: 4
+    t.string   "name",       limit: 255
     t.float    "win_ratio",  limit: 24
     t.float    "top2_ratio", limit: 24
     t.float    "top3_ratio", limit: 24
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

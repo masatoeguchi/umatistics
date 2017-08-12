@@ -5,7 +5,7 @@ class UmatisticsScraping
       a.keep_alive =false
     end
     links = []
-    next_url = "l20050101"
+    next_url = "l20040703"
     # スタート時のリンク
     # 自動取得したい
 
